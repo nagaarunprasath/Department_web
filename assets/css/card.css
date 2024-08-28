@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #050332;
+    font-family: sans-serif;
+    color: #fff;
+    line-height: 1.6;
+}
+
+nav h2 {
+    color: rgb(6, 237, 218);
+}
+.nav{
+    position: sticky;
+    top: 0;
+}
+
+nav {
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(0, 0, 60);
+}
+
+nav a {
+    color: rgb(6, 237, 218);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link {
+    color: rgb(6, 237, 218);
+    font-size: 15px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+nav button {
+    padding: 7px;
+    border-radius: 3px;
+    color: #07045a;
+    background-color: rgb(6, 237, 218);
+    border: none;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: rgb(202, 235, 230);
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.icon2 {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .link {
+        display: none;
+    }
+    .icon2 {
+        display: block;
+    }
+    .content {
+        margin: 20px; /* Reduce margin for small screens */
+    }
+    .contents {
+        flex-direction: column; /* Stack content vertically on small screens */
+        text-align: center;
+    }
+    .contents img {
+        width: 100%; /* Ensure images are responsive */
+        max-width: 300px; /* Constrain image width */
+    }
+    .about-images img {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+
+.content {
+    background-color: #fff;
+    margin: 50px auto; /* Center content with auto margin */
+    border-radius: 20px;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    max-width: 1000px; /* Constrain content width */
+    max-height: 500px;
+    padding: 10px;
+    color: #333;
+}
+.content p{
+    color: #050332;
+}
+
+.contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping to prevent overflow */
+}
+
+.contents p {
+    flex: 1;
+    margin: 20px;
+    text-align: justify;
+    word-wrap: break-word; /* Ensure words break correctly if too long */
+}
+
+.contents img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+}
+
+.start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-btn button {
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    color: #07045a;
+    background: aqua;
+}
+
+.about {
+    margin-top: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+.about p {
+    margin: 25px 50px;
+}
+
+
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-images img {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.footer h1 {
+    text-align: center;
+    color: #fff;
+    padding: 50px 0;
+    background-color: #100e0e;
+}
+/* Custom scrollbar styles for WebKit browsers */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007bff; /* Background color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Color of the scrollbar thumb on hover */
+}
+/* Existing styles... */
+
+/* Custom scrollbar styles for WebKit browsers */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07c3e8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00e1ff;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6ab2ff;
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: thin; /* Possible values: auto, thin, none */
+    scrollbar-color: #00ebf8 #060a46; /* Thumb color and track color */
+}
+
