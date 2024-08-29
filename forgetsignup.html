@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>LOGIN-PAGE</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+            display: none;
+        }
+        input.error-border {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="staff-form">
+                <h1>FORGET PASSWORD</h1>
+                <span>Get your new Password</span>
+
+                
+                <input type="email" id="staff-email" placeholder="Email">
+                <div class="error" id="staff-email-error">Valid email is required</div>
+                
+                <input type="password" id="staff-password" placeholder="Enter verify code">
+                <div class="error" id="staff-password-error">Password is required</div>
+                
+                <button type="submit" onclick="window.open('login.html')">Login Now</button>
+            </form>
+        </div>
+    
+        <div class="form-container sign-in">
+            <form id="student-form">
+                <h1>SIGN-UP</h1>
+                <span>Use email & password</span>
+                <input type="text" id="student-name" placeholder="Name">
+                <div class="error" id="student-name-error">Name is required</div>
+                
+                <input type="email" id="student-email" placeholder="Email">
+                <div class="error" id="student-email-error">Valid email is required</div>
+                
+                <input type="password" id="student-password" placeholder=" Create Password">
+                <div class="error" id="student-password-error">Password is required</div>
+                <input type="password" id="student-password" placeholder="Confirm Password">
+                <div class="error" id="student-password-error"></div>
+                
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                 <img src="./assets/images/image.png" alt="" width="100px">
+                <button class="hidden" id="login">Sign-up</button>
+            </div>
+        <div class="toggle-panel toggle-right">
+                <img src="./assets/images/image.png" alt="" width="100px">
+                <button class="hidden" id="register">Forget Password</button>
+            </div>
+    </div>
+    </div>
+    </div>
+    <script defer>
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+
+        // Validation functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function validateForm(nameInput, emailInput, passwordInput, nameError, emailError, passwordError) {
+            let isValid = true;
+
+            // Name validation
+            if (!nameInput.value.trim()) {
+                nameError.style.display = 'block';
+                nameInput.classList.add('error-border');
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+                nameInput.classList.remove('error-border');
+            }
+
+            // Email validation
+            if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
+                emailError.style.display = 'block';
+                emailInput.classList.add('error-border');
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+                emailInput.classList.remove('error-border');
+            }
+
+            // Password validation
+            if (!passwordInput.value.trim()) {
+                passwordError.style.display = 'block';
+                passwordInput.classList.add('error-border');
+                isValid = false;
+            } else {
+                passwordError.style.display = 'none';
+                passwordInput.classList.remove('error-border');
+            }
+
+            return isValid;
+        }
+
+        // Staff form validation
+        document.getElementById('staff-form').addEventListener('submit', function(event) {
+            const nameInput = document.getElementById('staff-name');
+            const emailInput = document.getElementById('staff-email');
+            const passwordInput = document.getElementById('staff-password');
+
+            const nameError = document.getElementById('staff-name-error');
+            const emailError = document.getElementById('staff-email-error');
+            const passwordError = document.getElementById('staff-password-error');
+
+            if (!validateForm(nameInput, emailInput, passwordInput, nameError, emailError, passwordError)) {
+                event.preventDefault();
+            } else {
+                window.open('home.html');
+            }
+        });
+
+        // Student form validation
+        document.getElementById('student-form').addEventListener('submit', function(event) {
+            const nameInput = document.getElementById('student-name');
+            const emailInput = document.getElementById('student-email');
+            const passwordInput = document.getElementById('student-password');
+
+            const nameError = document.getElementById('student-name-error');
+            const emailError = document.getElementById('student-email-error');
+            const passwordError = document.getElementById('student-password-error');
+
+            if (!validateForm(nameInput, emailInput, passwordInput, nameError, emailError, passwordError)) {
+                event.preventDefault();
+            } else {
+                window.open('home.html');
+            }
+        });
+    </script>
+</body>
+</html>
