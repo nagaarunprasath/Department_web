@@ -257,6 +257,23 @@ span {
     margin: 10px;
     height: 400px;
 }
+@media  (maxwidth:1024px){
+
+}
+@media  (maxwidth:768px){
+
+}
+@media  (maxwidth:425px) {
+
+.container-3 {
+    padding: 17px;
+    background-color: rgb(4, 4, 4);
+    margin: 10px;
+    height: 542px;
+}
+}
+    
+
 
 /* .container-3 .foot{
     border: solid 1px;
